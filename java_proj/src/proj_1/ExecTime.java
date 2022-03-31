@@ -1,10 +1,12 @@
+package proj_1;
+
 public class ExecTime{
     public static void main(String[] args){
         long startTime, endTime, execTime;
         int N = 1000000; // 반복 수행 횟수
         startTime = System.nanoTime();
         for (int i=0; i<N; i++) {// 반복 수행을 해서 측정을 하면, 보다 정확한 결과 // statement(s) to be measured
-            isPrime(1237);
+            isPrime2(1237);
         }
         endTime = System.nanoTime();
         execTime = endTime-startTime;
@@ -20,7 +22,16 @@ public class ExecTime{
             }
         }
         return flag;
-            
     }
-
+    
+    static boolean isPrime2(int n){
+        boolean flag = true;
+        Double sqrt_n = Math.sqrt(n);
+        for (int i=2; i<sqrt_n; i++) {  
+            if ( n%i == 0){
+                flag = false;
+            }
+        }
+        return flag;
+    }
 }
